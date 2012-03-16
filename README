@@ -14,8 +14,8 @@ Installation
 
 How to use
 ----------
-The only thing you need is to put as many links as you need pointing to "http://<yourdomain>/index.php/hauth/<provider>", ex.:
+The only thing you need is to put as many links as you need pointing to "http://<yourdomain>/index.php/hauth/login/<provider>", ex.:
 
-<a href="http://www.example.com/index.php/hauth/Twitter">Log in with Twitter</a><br />
-<a href="http://www.example.com/index.php/hauth/Facebook">Log in with Facebook</a><br />
-<a href="http://www.example.com/index.php/hauth/LinkedIn">Log in with LinkedIn</a>
+<a href="http://www.example.com/index.php/hauth/login/Twitter">Log in with Twitter</a><br />
+<a href="http://www.example.com/index.php/hauth/login/Facebook">Log in with Facebook</a><br />
+<a href="http://www.example.com/index.php/hauth/login/LinkedIn">Log in with LinkedIn</a>
