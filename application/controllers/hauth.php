@@ -80,6 +80,12 @@ class HAuth extends CI_Controller
 		{
 			log_message('debug', 'controllers.HAuth.endpoint: the request method is GET, copying REQUEST array into GET array.');
 			$_GET = $_REQUEST;
+			//godaddy fix adding hauth.start and hauth.time
+            		parse_str($_SERVER['QUERY_STRING'], $query);
+	            	if (isset($query['hauth_start'])) {
+	                	$_GET['hauth_start'] = $query['hauth_start'];
+	                	$_GET['hauth_time'] = $query['hauth_time'];
+	            	}
 		}
 
 		log_message('debug', 'controllers.HAuth.endpoint: loading the original HybridAuth endpoint script.');
