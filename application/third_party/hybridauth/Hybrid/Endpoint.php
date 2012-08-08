@@ -26,13 +26,13 @@ class Hybrid_Endpoint {
 
 		if ( is_null(Hybrid_Endpoint::$request) ){
 			// Fix a strange behavior when some provider call back ha endpoint
-			// with /index.php?hauth.done={provider}?{args}... 
-			// >here we need to recreate the $_REQUEST
-			if ( strrpos( $_SERVER["QUERY_STRING"], '?' ) ) {
-				$_SERVER["QUERY_STRING"] = str_replace( "?", "&", $_SERVER["QUERY_STRING"] );
-
-				parse_str( $_SERVER["QUERY_STRING"], $_REQUEST );
-			}
+		        // with /index.php?hauth.done={provider}?{args}... 
+		        // >here we need to recreate the $_REQUEST
+		        if (strrpos($_SERVER["QUERY_STRING"], '?')) {
+		            $_SERVER["QUERY_STRING"] = str_replace("?", "&", $_SERVER["QUERY_STRING"]);
+		        }
+		        //godaddy fix
+		        parse_str($_SERVER["QUERY_STRING"], $_REQUEST);
 
 			Hybrid_Endpoint::$request = $_REQUEST;
 		}
