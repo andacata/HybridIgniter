@@ -1,11 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class HAuth extends CI_Controller
-{
+class HAuth extends CI_Controller {
+	
+	public function index()
+	{
+		$this->load->view('hauth/home');
+	}
+	
 	public function login($provider)
 	{
 		log_message('debug', "controllers.HAuth.login($provider) called");
-
+		
 		try
 		{
 			log_message('debug', 'controllers.HAuth.login: loading HybridAuthLib');
@@ -15,7 +20,7 @@ class HAuth extends CI_Controller
 			{
 				log_message('debug', "controllers.HAuth.login: service $provider enabled, trying to authenticate.");
 				$service = $this->hybridauthlib->authenticate($provider);
-
+				
 				if ($service->isUserConnected())
 				{
 					log_message('debug', 'controller.HAuth.login: user authenticated.');
@@ -25,6 +30,8 @@ class HAuth extends CI_Controller
 					log_message('info', 'controllers.HAuth.login: user profile:'.PHP_EOL.print_r($user_profile, TRUE));
 
 					$data['user_profile'] = $user_profile;
+					
+					$this->load->view('hauth/done',$data);
 				}
 				else // Cannot authenticate user
 				{
@@ -73,6 +80,7 @@ class HAuth extends CI_Controller
 
 	public function endpoint()
 	{
+		
 		log_message('debug', 'controllers.HAuth.endpoint called.');
 		log_message('info', 'controllers.HAuth.endpoint: $_REQUEST: '.print_r($_REQUEST, TRUE));
 
@@ -84,9 +92,9 @@ class HAuth extends CI_Controller
 
 		log_message('debug', 'controllers.HAuth.endpoint: loading the original HybridAuth endpoint script.');
 		require_once APPPATH.'/third_party/hybridauth/index.php';
+		
 	}
-
 }
 
-/* End of file test.php */
-/* Location: ./application/controllers/test.php */
+/* End of file hauth.php */
+/* Location: ./application/controllers/hauth.php */

@@ -1,8 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /*!
 * HybridAuth
-* http://hybridauth.sourceforge.net | https://github.com/hybridauth/hybridauth
-*  (c) 2009-2011 HybridAuth authors | hybridauth.sourceforge.net/licenses.html
+* http://hybridauth.sourceforge.net | http://github.com/hybridauth/hybridauth
+* (c) 2009-2012, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html
 */
 
 // ----------------------------------------------------------------------------------------
@@ -16,66 +16,64 @@ $config =
 		// "/index.php/" part __MUST__ be prepended to the base_url.
 		'base_url' => '/hauth/endpoint',
 
-		'providers' => array (
+		"providers" => array ( 
 			// openid providers
-			'OpenID' => array (
-				'enabled' => TRUE
+			"OpenID" => array (
+				"enabled" => true
 			),
 
-			'Yahoo' => array (
-				'enabled' => TRUE
+			"Yahoo" => array ( 
+				"enabled" => true,
+				"keys"    => array ( "id" => "", "secret" => "" ),
 			),
 
-			'AOL'  => array (
-				'enabled' => TRUE
+			"AOL"  => array ( 
+				"enabled" => true 
 			),
 
-			'Google' => array (
-				'enabled' => TRUE,
-				'keys'    => array ( 'id' => '', 'secret' => '' ),
-				'scope'   => ''
+			"Google" => array ( 
+				"enabled" => true,
+				"keys"    => array ( "id" => "", "secret" => "" ), 
 			),
 
-			'Facebook' => array (
-				'enabled' => TRUE,
-				'keys'    => array ( 'id' => '', 'secret' => '' ),
-
-				// A comma-separated list of permissions you want to request from the user. See the Facebook docs for a full list of available permissions: http://developers.facebook.com/docs/reference/api/permissions.
-				'scope'   => '',
-
-				// The display context to show the authentication page. Options are: page, popup, iframe, touch and wap. Read the Facebook docs for more details: http://developers.facebook.com/docs/reference/dialogs#display. Default: page
-				'display' => ''
+			"Facebook" => array ( 
+				"enabled" => true,
+				"keys"    => array ( "id" => "", "secret" => "" ), 
 			),
 
-			'Twitter' => array (
-				'enabled' => TRUE,
-				'keys'    => array ( 'key' => '', 'secret' => '' )
+			"Twitter" => array ( 
+				"enabled" => true,
+				"keys"    => array ( "key" => "", "secret" => "" ) 
 			),
 
 			// windows live
-			'Live' => array (
-				'enabled' => TRUE,
-				'keys'    => array ( 'id' => '', 'secret' => '' )
+			"Live" => array ( 
+				"enabled" => true,
+				"keys"    => array ( "id" => "", "secret" => "" ) 
 			),
 
-			'MySpace' => array (
-				'enabled' => TRUE,
-				'keys'    => array ( 'key' => '', 'secret' => '' )
+			"MySpace" => array ( 
+				"enabled" => true,
+				"keys"    => array ( "key" => "", "secret" => "" ) 
 			),
 
-			'LinkedIn' => array (
-				'enabled' => TRUE,
-				'keys'    => array ( 'key' => '', 'secret' => '' )
+			"LinkedIn" => array ( 
+				"enabled" => true,
+				"keys"    => array ( "key" => "", "secret" => "" ) 
 			),
 
-			'Foursquare' => array (
-				'enabled' => TRUE,
-				'keys'    => array ( 'id' => '', 'secret' => '' )
+			"Foursquare" => array (
+				"enabled" => true,
+				"keys"    => array ( "id" => "", "secret" => "" ) 
 			),
 		),
 
-		// if you want to enable logging, set 'debug_mode' to TRUE then provide a writable file by the web server on "debug_file"
-		'debug_mode' => (ENVIRONMENT == 'development'),
+		// if you want to enable logging, set 'debug_mode' to true  then provide a writable file by the web server on "debug_file"
+		"debug_mode" => (ENVIRONMENT == 'development'),
 
-		'debug_file' => APPPATH.'/logs/hybridauth.log',
+		"debug_file" => APPPATH.'/logs/hybridauth.log',
 	);
+
+
+/* End of file hybridauthlib.php */
+/* Location: ./application/config/hybridauthlib.php */
