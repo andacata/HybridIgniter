@@ -73,3 +73,7 @@ $config =
 
 		"debug_file" => APPPATH.'/logs/hybridauth.log',
 	);
+
+
+/* End of file hybridauthlib.php */
+/* Location: ./application/config/hybridauthlib.php */
