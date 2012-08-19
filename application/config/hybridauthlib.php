@@ -11,7 +11,10 @@
 
 $config =
 	array(
-		"base_url" => "http://localhost/hybridauth-git/hybridauth/", 
+		// set on "base_url" the relative url that point to HybridAuth Endpoint
+		// IMPORTANT: If the "index.php" is removed from the URL (http://codeigniter.com/user_guide/general/urls.html) the
+		// "/index.php/" part __MUST__ be prepended to the base_url.
+		'base_url' => '/hauth/endpoint',
 
 		"providers" => array ( 
 			// openid providers
@@ -66,7 +69,7 @@ $config =
 		),
 
 		// if you want to enable logging, set 'debug_mode' to true  then provide a writable file by the web server on "debug_file"
-		"debug_mode" => false,
+		"debug_mode" => (ENVIRONMENT == 'development'),
 
-		"debug_file" => "",
+		"debug_file" => APPPATH.'/logs/hybridauth.log',
 	);
