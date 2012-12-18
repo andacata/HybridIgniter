@@ -4,7 +4,7 @@ A simple HybridAuth - CodeIgniter integration.
 
 ##Versions
 - HybridAuth 2.1.0
-- CodeIgniter 2.1.2
+- CodeIgniter 2.1.3
 
 ##Installation
 1. Drop the provided files into the CodeIgniter project
