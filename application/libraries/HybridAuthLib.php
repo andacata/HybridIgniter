@@ -16,9 +16,17 @@ class HybridAuthLib extends Hybrid_Auth
 		log_message('debug', 'HybridAuthLib Class Initalized');
 	}
 
+	/**
+	 * @deprecated
+	 */
 	public static function serviceEnabled($service)
 	{
-		return isset(parent::$config['providers'][$service]) && parent::$config['providers'][$service]['enabled'];
+		self::providerEnabled($service);
+	}
+
+	public static function providerEnabled($provider)
+	{
+		return isset(parent::$config['providers'][$provider]) && parent::$config['providers'][$provider]['enabled'];
 	}
 }
 
