@@ -12,59 +12,57 @@
 $config =
 	array(
 		// set on "base_url" the relative url that point to HybridAuth Endpoint
-		// IMPORTANT: If the "index.php" is removed from the URL (http://codeigniter.com/user_guide/general/urls.html) the
-		// "/index.php/" part __MUST__ be prepended to the base_url.
 		'base_url' => '/hauth/endpoint',
 
-		"providers" => array ( 
+		"providers" => array (
 			// openid providers
 			"OpenID" => array (
 				"enabled" => true
 			),
 
-			"Yahoo" => array ( 
+			"Yahoo" => array (
 				"enabled" => true,
 				"keys"    => array ( "id" => "", "secret" => "" ),
 			),
 
-			"AOL"  => array ( 
-				"enabled" => true 
+			"AOL"  => array (
+				"enabled" => true
 			),
 
-			"Google" => array ( 
+			"Google" => array (
 				"enabled" => true,
-				"keys"    => array ( "id" => "", "secret" => "" ), 
+				"keys"    => array ( "id" => "", "secret" => "" ),
 			),
 
-			"Facebook" => array ( 
+			"Facebook" => array (
 				"enabled" => true,
-				"keys"    => array ( "id" => "", "secret" => "" ), 
+				"keys"    => array ( "id" => "", "secret" => "" ),
 			),
 
-			"Twitter" => array ( 
+			"Twitter" => array (
 				"enabled" => true,
-				"keys"    => array ( "key" => "", "secret" => "" ) 
+				"keys"    => array ( "key" => "", "secret" => "" )
 			),
 
 			// windows live
-			"Live" => array ( 
+			"Live" => array (
 				"enabled" => true,
-				"keys"    => array ( "id" => "", "secret" => "" ) 
+				"keys"    => array ( "id" => "", "secret" => "" )
 			),
 
-			"MySpace" => array ( 
+			"MySpace" => array (
 				"enabled" => true,
-				"keys"    => array ( "key" => "", "secret" => "" ) 
+				"keys"    => array ( "key" => "", "secret" => "" )
 			),
 
-			"LinkedIn" => array ( 
+			"LinkedIn" => array (
 				"enabled" => true,
-				"keys"    => array ( "key" => "", "secret" => "" ) 
+				"keys"    => array ( "key" => "", "secret" => "" )
 			),
 
 			"Foursquare" => array (
 				"enabled" => true,
-				"keys"    => array ( "id" => "", "secret" => "" ) 
+				"keys"    => array ( "id" => "", "secret" => "" )
 			),
 		),
 
