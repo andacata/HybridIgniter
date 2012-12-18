@@ -8,7 +8,7 @@ class HybridAuthLib extends Hybrid_Auth
 	{
 		$ci =& get_instance();
 		$ci->load->helper('url_helper');
-
+		
 		$config['base_url'] = site_url($config['base_url']);
 
 		parent::__construct($config);
