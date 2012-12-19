@@ -21,7 +21,7 @@ class HybridAuthLib extends Hybrid_Auth
 	 */
 	public static function serviceEnabled($service)
 	{
-		self::providerEnabled($service);
+		return self::providerEnabled($service);
 	}
 
 	public static function providerEnabled($provider)
