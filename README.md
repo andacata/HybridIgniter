@@ -19,3 +19,6 @@ The only thing you need is to put as many links as you need pointing to "http://
 	<a href="http://www.example.com/index.php/hauth/login/LinkedIn">Log in with LinkedIn</a>
 
 Also, you can visit "http://&lt;yourdomain>/index.php/hauth" to see some examples.
+
+If you need more complete examples, you can visit the Dovy's fork: https://github.com/dovy/HybridIgniter
+
