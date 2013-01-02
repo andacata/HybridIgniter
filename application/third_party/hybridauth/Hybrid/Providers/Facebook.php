@@ -26,15 +26,17 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
 			throw new Exception( "Your application id and secret are required in order to connect to {$this->providerId}.", 4 );
 		}
 
-		if ( ! class_exists('FacebookApiException') ) {
+		if ( ! class_exists('FacebookApiException', false) ) {
 			require_once Hybrid_Auth::$config["path_libraries"] . "Facebook/base_facebook.php";
 			require_once Hybrid_Auth::$config["path_libraries"] . "Facebook/facebook.php";
 		}
 
 		$this->api = new Facebook( ARRAY( 'appId' => $this->config["keys"]["id"], 'secret' => $this->config["keys"]["secret"] ) ); 
 
-		if ( $this->token("access_token") ) { 
-			$access_token = $this->api->extendedAccessToken( $this->token("access_token") );
+		if ( $this->token("access_token") ) {
+			$this->api->setAccessToken( $this->token("access_token") );
+			$this->api->setExtendedAccessToken();
+			$access_token = $this->api->getAccessToken();
 
 			if( $access_token ){
 				$this->token("access_token", $access_token );
@@ -77,12 +79,12 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
 	{ 
 		// in case we get error_reason=user_denied&error=access_denied
 		if ( isset( $_REQUEST['error'] ) && $_REQUEST['error'] == "access_denied" ){ 
-			throw new Exception( "Authentification failed! The user denied your request.", 5 );
+			throw new Exception( "Authentication failed! The user denied your request.", 5 );
 		}
 
 		// try to get the UID of the connected user from fb, should be > 0 
 		if ( ! $this->api->getUser() ){
-			throw new Exception( "Authentification failed! {$this->providerId} returned an invalide user id.", 5 );
+			throw new Exception( "Authentication failed! {$this->providerId} returned an invalid user id.", 5 );
 		}
 
 		// set user as logged in
