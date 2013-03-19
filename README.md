@@ -1,9 +1,9 @@
 #HybridIgniter
 
-A simple HybridAuth - CodeIgniter integration.
+A simple [HybridAuth](http://hybridauth.sourceforge.net/) - [CodeIgniter](http://ellislab.com/codeigniter) integration.
 
 ##Versions
-- HybridAuth 2.1.0
+- HybridAuth 2.1.2
 - CodeIgniter 2.1.3
 
 ##Installation
